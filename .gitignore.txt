@@ -1,0 +1,19 @@
+# Unity
+UnityClient/[Ll]ibrary/
+UnityClient/[Tt]emp/
+UnityClient/[Oo]bj/
+UnityClient/[Bb]uild/
+UnityClient/[Ll]ogs/
+UnityClient/MemoryCaptures/
+UnityClient/*.csproj
+UnityClient/*.sln
+UnityClient/*.user
+
+# .NET API
+EnvironmentAPI/bin/
+EnvironmentAPI/obj/
+
+# System files
+.DS_Store
+Thumbs.db
+.vscode/
