@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EnvironmentAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+70ae0fc1646fa66a2dd8afd0ac89312a3d4086d7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ed88f3e594b5bca3bdd6659d873198568bccdcfc")]
 [assembly: System.Reflection.AssemblyProductAttribute("EnvironmentAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EnvironmentAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
