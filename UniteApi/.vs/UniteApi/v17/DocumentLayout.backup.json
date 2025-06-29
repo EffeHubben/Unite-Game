@@ -82,8 +82,7 @@
               "RelativeToolTip": "Controllers\\WorldsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-29T00:18:59.618Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-29T00:18:59.618Z"
             },
             {
               "$type": "Document",
@@ -95,8 +94,7 @@
               "RelativeToolTip": "Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T22:40:05.427Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-28T22:40:05.427Z"
             },
             {
               "$type": "Document",
@@ -108,8 +106,7 @@
               "RelativeToolTip": "Data\\UniteDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T22:38:26.699Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-28T22:38:26.699Z"
             },
             {
               "$type": "Document",
@@ -134,8 +131,7 @@
               "RelativeToolTip": "AppDbContext.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAgwB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T22:28:56.728Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-28T22:28:56.728Z"
             },
             {
               "$type": "Document",
@@ -147,8 +143,7 @@
               "RelativeToolTip": "Models\\WorldEntity.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T22:26:02.852Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-28T22:26:02.852Z"
             },
             {
               "$type": "Document",
@@ -160,8 +155,7 @@
               "RelativeToolTip": "Models\\WorldObjectEntity.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAA4wAIAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T22:25:06.715Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-28T22:25:06.715Z"
             },
             {
               "$type": "Document",
@@ -173,8 +167,7 @@
               "RelativeToolTip": "Controllers\\WorldController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T22:16:23.205Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-28T22:16:23.205Z"
             },
             {
               "$type": "Document",
@@ -186,8 +179,7 @@
               "RelativeToolTip": "Models\\WorldData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T22:15:47.359Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-28T22:15:47.359Z"
             },
             {
               "$type": "Document",
@@ -199,8 +191,7 @@
               "RelativeToolTip": "Models\\WorldObjectData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T22:15:27.421Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-28T22:15:27.421Z"
             },
             {
               "$type": "Document",
@@ -212,8 +203,7 @@
               "RelativeToolTip": "Models\\Vector3Data.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T22:14:49.904Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-28T22:14:49.904Z"
             },
             {
               "$type": "Document",
@@ -225,8 +215,7 @@
               "RelativeToolTip": "Models\\QuaternionData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T22:15:06.057Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-28T22:15:06.057Z"
             },
             {
               "$type": "Document",
@@ -238,8 +227,7 @@
               "RelativeToolTip": "Controllers\\AuthController.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAA1wCkAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T22:43:36.958Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-28T22:43:36.958Z"
             },
             {
               "$type": "Document",

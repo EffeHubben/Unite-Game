@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class InventoryManager : MonoBehaviour
@@ -87,5 +88,8 @@ public class InventoryManager : MonoBehaviour
 
         apiManager.SaveWorld(worldName, userId, sceneObjects);
         Debug.Log($"Wereld '{worldName}' opgeslagen met {sceneObjects.Length} object(en).");
+
+        // Ga terug naar de load game scene
+        SceneManager.LoadScene("Load game");
     }
 }
