@@ -33,9 +33,16 @@ public class WorldData
     public List<WorldObjectData> worldObjects = new();
 }
 
+[System.Serializable]
+public class WorldListWrapper
+{
+    public List<WorldData> items;
+}
+
 public class APIManager : MonoBehaviour
 {
-    public string apiBaseUrl = "https://localhost:7234/api/world"; // Pas dit aan naar jouw poort
+    // ✅ Gebruik IP i.p.v. localhost om Unity-fouten te vermijden
+    public string apiBaseUrl = "http://127.0.0.1:7077/api/world";
 
     public void SaveWorld(string worldName, int userId, GameObject[] sceneObjects)
     {
@@ -77,18 +84,28 @@ public class APIManager : MonoBehaviour
 
     IEnumerator PostWorld(string json)
     {
-        UnityWebRequest www = new UnityWebRequest(apiBaseUrl + "/save", "POST");
+        string fullUrl = apiBaseUrl + "/save";
+        UnityWebRequest www = new UnityWebRequest(fullUrl, "POST");
         byte[] body = Encoding.UTF8.GetBytes(json);
         www.uploadHandler = new UploadHandlerRaw(body);
         www.downloadHandler = new DownloadHandlerBuffer();
         www.SetRequestHeader("Content-Type", "application/json");
 
+        // 🔎 Debug logs
+        Debug.Log("🌐 Probeer POST naar: " + fullUrl);
+        Debug.Log("📦 Payload: " + json);
+
         yield return www.SendWebRequest();
 
         if (www.result == UnityWebRequest.Result.Success)
+        {
             Debug.Log("✅ Wereld succesvol opgeslagen!");
+        }
         else
+        {
             Debug.LogError("❌ Fout bij opslaan: " + www.error);
+            Debug.LogError("❗️Volledige URL: " + fullUrl);
+        }
     }
 
     public void LoadWorldsByUser(int userId)
@@ -98,32 +115,26 @@ public class APIManager : MonoBehaviour
 
     IEnumerator GetWorldsRoutine(int userId)
     {
-        UnityWebRequest www = UnityWebRequest.Get($"{apiBaseUrl}/user/{userId}");
+        string getUrl = $"{apiBaseUrl}/user/{userId}";
+        UnityWebRequest www = UnityWebRequest.Get(getUrl);
 
         yield return www.SendWebRequest();
 
         if (www.result == UnityWebRequest.Result.Success)
         {
             string json = "{\"items\":" + www.downloadHandler.text + "}";
-
             WorldListWrapper wrapper = JsonUtility.FromJson<WorldListWrapper>(json);
-            Debug.Log("✅ Werelden ontvangen: " + wrapper.items.Count);
 
+            Debug.Log("✅ Werelden ontvangen: " + wrapper.items.Count);
             foreach (var world in wrapper.items)
             {
                 Debug.Log($"🌍 {world.name} heeft {world.worldObjects.Count} objecten.");
-                // Hier kan je buttons maken of werelden instantiëren
             }
         }
         else
         {
             Debug.LogError("❌ Fout bij ophalen: " + www.error);
+            Debug.LogError("🔗 URL: " + getUrl);
         }
     }
-}
-
-[System.Serializable]
-public class WorldListWrapper
-{
-    public List<WorldData> items;
 }

@@ -1,40 +1,66 @@
-﻿using System.Collections;
+﻿using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Networking;
-using System.Text;
 
 public class WorldLoader : MonoBehaviour
 {
-    public string apiBaseUrl = "https://localhost:7234/api/world";
+    public Transform worldParent;
+    public GameObject[] prefabTemplates; // Zorg dat prefabTemplates[0] = Lamp, [1] = Table, etc.
 
     void Start()
     {
-        int userId = PlayerPrefs.GetInt("UserId");
-        StartCoroutine(LoadWorlds(userId));
-    }
-
-    IEnumerator LoadWorlds(int userId)
-    {
-        UnityWebRequest www = UnityWebRequest.Get($"{apiBaseUrl}/user/{userId}");
-        yield return www.SendWebRequest();
-
-        if (www.result == UnityWebRequest.Result.Success)
+        // 1) Lees de JSON uit PlayerPrefs
+        string json = PlayerPrefs.GetString("LoadedWorldJson", "");
+        if (string.IsNullOrEmpty(json))
         {
-            string json = "{\"items\":" + www.downloadHandler.text + "}";
+            Debug.LogError("Geen wereld-data gevonden in PlayerPrefs!");
+            return;
+        }
 
-            WorldListWrapper wrapper = JsonUtility.FromJson<WorldListWrapper>(json);
-            Debug.Log("✅ Werelden geladen: " + wrapper.items.Count);
+        // 2) Parse naar een helper-klasse
+        WorldData world = JsonUtility.FromJson<WorldData>(json);
 
-            foreach (var world in wrapper.items)
+        // 3) Instantiate elk object
+        foreach (var obj in world.worldObjects)
+        {
+            // Zoek de juiste prefab op basis van prefabName
+            for (int i = 0; i < prefabTemplates.Length; i++)
             {
-                Debug.Log($"🌍 {world.name} met {world.worldObjects.Count} objecten");
-                // Hier kun je knoppen maken of automatisch 1 wereld laden
+                if (prefabTemplates[i].name == obj.prefabName)
+                {
+                    Vector3 pos = new Vector3(obj.position.x, obj.position.y, obj.position.z);
+                    GameObject go = Instantiate(prefabTemplates[i], pos,
+                                     Quaternion.Euler(obj.rotation.x, obj.rotation.y, obj.rotation.z),
+                                     worldParent);
+                    go.transform.localScale = new Vector3(
+                        obj.scale.x, obj.scale.y, obj.scale.z
+                    );
+                    break;
+                }
             }
         }
-        else
-        {
-            Debug.LogError("❌ Fout bij ophalen werelden: " + www.error);
-        }
+
+        Debug.Log($"🌍 Wereld '{world.name}' geladen met {world.worldObjects.Count} objecten.");
+    }
+
+    // Zelfde helper classes als in APIManager:
+    [System.Serializable]
+    public class Vector3Data { public float x, y, z; }
+    [System.Serializable]
+    public class QuaternionData { public float x, y, z, w; }
+    [System.Serializable]
+    public class WorldObjectData
+    {
+        public string prefabName;
+        public Vector3Data position;
+        public Vector3Data scale;
+        public QuaternionData rotation;
+    }
+    [System.Serializable]
+    public class WorldData
+    {
+        public string name;
+        public int userId;
+        public int slot;
+        public List<WorldObjectData> worldObjects;
     }
 }

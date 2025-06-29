@@ -31,14 +31,14 @@ public class InventoryManager : MonoBehaviour
                 inventoryPanelGroup.interactable = true;
                 inventoryPanelGroup.blocksRaycasts = true;
 
-                Debug.Log("📦 Object geplaatst!");
+                Debug.Log("Object geplaatst!");
             }
         }
     }
 
     public void SelectObject(int index)
     {
-        Debug.Log($"🟡 SelectObject aangeroepen met index: {index}");
+        Debug.Log($"SelectObject aangeroepen met index: {index}");
 
         if (index >= 0 && index < itemPrefabs.Length)
         {
@@ -51,11 +51,11 @@ public class InventoryManager : MonoBehaviour
             inventoryPanelGroup.interactable = false;
             inventoryPanelGroup.blocksRaycasts = false;
 
-            Debug.Log($"✅ Geselecteerd object: {selectedPrefab.name}");
+            Debug.Log($"Geselecteerd object: {selectedPrefab.name}");
         }
         else
         {
-            Debug.LogWarning("❌ Ongeldige index bij object selectie.");
+            Debug.LogWarning("Ongeldige index bij object selectie.");
         }
     }
 
@@ -65,7 +65,7 @@ public class InventoryManager : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-        Debug.Log("🗑️ Alle objecten verwijderd!");
+        Debug.Log("Alle objecten verwijderd!");
     }
 
     public void SaveWorld()
@@ -73,7 +73,7 @@ public class InventoryManager : MonoBehaviour
         string worldName = worldNameInput.text;
         if (string.IsNullOrWhiteSpace(worldName))
         {
-            Debug.LogWarning("⚠️ Geef de wereld een naam!");
+            Debug.LogWarning("Geef de wereld een naam!");
             return;
         }
 
@@ -86,6 +86,6 @@ public class InventoryManager : MonoBehaviour
         }
 
         apiManager.SaveWorld(worldName, userId, sceneObjects);
-        Debug.Log($"🌍 Wereld '{worldName}' opgeslagen met {sceneObjects.Length} object(en).");
+        Debug.Log($"Wereld '{worldName}' opgeslagen met {sceneObjects.Length} object(en).");
     }
 }
